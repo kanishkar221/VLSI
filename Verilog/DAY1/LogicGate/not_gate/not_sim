@@ -1,0 +1,41 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffde877740 .scope module, "tb_not" "tb_not" 2 1;
+ .timescale 0 0;
+v0x7fffde89bf60_0 .var "a", 0 0;
+v0x7fffde89c000_0 .net "o", 0 0, L_0x7fffde89c0d0;  1 drivers
+S_0x7fffde88b2b0 .scope module, "uut" "not_gate" 2 5, 3 1 0, S_0x7fffde877740;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "o";
+L_0x7fffde89c0d0 .functor NOT 1, v0x7fffde89bf60_0, C4<0>, C4<0>, C4<0>;
+v0x7fffde88b440_0 .net "a", 0 0, v0x7fffde89bf60_0;  1 drivers
+v0x7fffde89be40_0 .net "o", 0 0, L_0x7fffde89c0d0;  alias, 1 drivers
+    .scope S_0x7fffde877740;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "not_wave.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fffde877740 {0 0 0};
+    %vpi_call 2 11 "$display", "time | a b | o" {0 0 0};
+    %vpi_call 2 12 "$monitor", "%2t | %b | %b", $time, v0x7fffde89bf60_0, v0x7fffde89c000_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffde89bf60_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffde89bf60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_not_gate.v";
+    "data.v";
