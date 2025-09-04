@@ -1,0 +1,71 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffea42a7c0 .scope module, "tb_and" "tb_and" 2 1;
+ .timescale 0 0;
+v0x7fffea452170_0 .var "a", 0 0;
+v0x7fffea452210_0 .var "b", 0 0;
+RS_0x7f6617e700a8 .resolv tri, L_0x7fffea4527a0, L_0x7fffea452980;
+v0x7fffea4522e0_0 .net8 "o", 0 0, RS_0x7f6617e700a8;  2 drivers, strength-aware
+S_0x7fffea43e9b0 .scope module, "uut" "and_gate" 2 7, 3 1 0, S_0x7fffea42a7c0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "o";
+L_0x7fffea452480 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x7fffea452520 .functor PMOS 1, L_0x7fffea452480, v0x7fffea452170_0, C4<0>, C4<0>;
+L_0x7fffea452660 .functor PMOS 1, L_0x7fffea452480, v0x7fffea452210_0, C4<0>, C4<0>;
+RS_0x7f6617e70138 .resolv tri, L_0x7fffea452520, L_0x7fffea452660, L_0x7fffea452910;
+L_0x7fffea4527a0 .functor PMOS 1, L_0x7fffea452480, RS_0x7f6617e70138, C4<0>, C4<0>;
+L_0x7fffea4523e0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x7fffea452860 .functor NMOS 1, L_0x7fffea4523e0, v0x7fffea452170_0, C4<0>, C4<0>;
+L_0x7fffea452910 .functor NMOS 1, L_0x7fffea452860, v0x7fffea452210_0, C4<0>, C4<0>;
+L_0x7fffea452980 .functor NMOS 1, L_0x7fffea4523e0, RS_0x7f6617e70138, C4<0>, C4<0>;
+v0x7fffea43f0e0_0 .net "a", 0 0, v0x7fffea452170_0;  1 drivers
+v0x7fffea451c40_0 .net "b", 0 0, v0x7fffea452210_0;  1 drivers
+v0x7fffea451d00_0 .net8 "gnd", 0 0, L_0x7fffea4523e0;  1 drivers, strength-aware
+v0x7fffea451da0_0 .net8 "o", 0 0, RS_0x7f6617e700a8;  alias, 2 drivers, strength-aware
+v0x7fffea451e60_0 .net8 "vcc", 0 0, L_0x7fffea452480;  1 drivers, strength-aware
+v0x7fffea451f70_0 .net8 "w", 0 0, L_0x7fffea452860;  1 drivers, strength-aware
+v0x7fffea452030_0 .net8 "y", 0 0, RS_0x7f6617e70138;  3 drivers, strength-aware
+    .scope S_0x7fffea42a7c0;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "and_wave.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fffea42a7c0 {0 0 0};
+    %vpi_call 2 13 "$display", "time | a b | o" {0 0 0};
+    %vpi_call 2 14 "$monitor", "%4t | %b %b | %b", $time, v0x7fffea452170_0, v0x7fffea452210_0, v0x7fffea4522e0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffea452170_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffea452210_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffea452170_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffea452210_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffea452170_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffea452210_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffea452170_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffea452210_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 20 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_and_gate.v";
+    "and_gate.v";
