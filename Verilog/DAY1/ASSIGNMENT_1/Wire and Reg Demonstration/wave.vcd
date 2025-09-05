@@ -1,0 +1,30 @@
+$date
+	Thu Sep  4 17:50:54 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module wire_reg_demo $end
+$var wire 1 ! net1 $end
+$var wire 1 " net2 $end
+$var wire 1 # w_from_reg $end
+$var reg 1 $ reg1 $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0$
+0#
+1"
+1!
+$end
+#10
+1#
+1$
+#20
