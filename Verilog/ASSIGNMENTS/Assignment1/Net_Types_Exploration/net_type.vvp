@@ -1,0 +1,66 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffbd70a490 .scope module, "net_types" "net_types" 2 3;
+ .timescale -9 -12;
+L_0x7fffbd757d00/d .functor BUFZ 1, v0x7fffbd70a620_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffbd757d00 .delay 1 (2000,2000,2000) L_0x7fffbd757d00/d;
+L_0x7fffbd757e30/d .functor BUFZ 1, v0x7fffbd757960_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffbd757e30 .delay 1 (3000,3000,3000) L_0x7fffbd757e30/d;
+L_0x7fffbd757f90/d .functor BUFZ 1, v0x7fffbd70a620_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffbd757f90 .delay 1 (2000,2000,2000) L_0x7fffbd757f90/d;
+L_0x7fffbd7580f0/d .functor BUFZ 1, v0x7fffbd757960_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffbd7580f0 .delay 1 (3000,3000,3000) L_0x7fffbd7580f0/d;
+L_0x7fffbd7582d0/d .functor BUFZ 1, v0x7fffbd70a620_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffbd7582d0 .delay 1 (2000,2000,2000) L_0x7fffbd7582d0/d;
+L_0x7fffbd7583e0/d .functor BUFZ 1, v0x7fffbd757960_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffbd7583e0 .delay 1 (3000,3000,3000) L_0x7fffbd7583e0/d;
+L_0x7fffbd758580/d .functor BUFZ 1, v0x7fffbd70a620_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffbd758580 .delay 1 (2000,2000,2000) L_0x7fffbd758580/d;
+L_0x7fffbd758660/d .functor BUFZ 1, v0x7fffbd757960_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffbd758660 .delay 1 (3000,3000,3000) L_0x7fffbd758660/d;
+v0x7fffbd70a620_0 .var "a", 0 0;
+v0x7fffbd757960_0 .var "b", 0 0;
+RS_0x7f86b7f00078 .resolv trior, L_0x7fffbd757f90, L_0x7fffbd7580f0;
+v0x7fffbd757a20_0 .net8 "onet", 0 0, RS_0x7f86b7f00078;  2 drivers
+RS_0x7f86b7f000a8 .resolv triand, L_0x7fffbd758580, L_0x7fffbd758660;
+v0x7fffbd757ac0_0 .net8 "tandnet", 0 0, RS_0x7f86b7f000a8;  2 drivers
+RS_0x7f86b7f000d8 .resolv tri, L_0x7fffbd7582d0, L_0x7fffbd7583e0;
+v0x7fffbd757b80_0 .net8 "tnet", 0 0, RS_0x7f86b7f000d8;  2 drivers
+RS_0x7f86b7f00108 .resolv triand, L_0x7fffbd757d00, L_0x7fffbd757e30;
+v0x7fffbd757c40_0 .net8 "wnet", 0 0, RS_0x7f86b7f00108;  2 drivers
+    .scope S_0x7fffbd70a490;
+T_0 ;
+    %vpi_call 2 23 "$display", "time | a b | wnet onet tnet tandnet" {0 0 0};
+    %vpi_call 2 24 "$monitor", "%4t | %b %b |   %b     %b    %b      %b", $time, v0x7fffbd70a620_0, v0x7fffbd757960_0, v0x7fffbd757c40_0, v0x7fffbd757a20_0, v0x7fffbd757b80_0, v0x7fffbd757ac0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbd70a620_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbd757960_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbd70a620_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbd757960_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbd70a620_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbd757960_0, 0, 1;
+    %delay 5000, 0;
+    %vpi_call 2 32 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "net_type.v";
