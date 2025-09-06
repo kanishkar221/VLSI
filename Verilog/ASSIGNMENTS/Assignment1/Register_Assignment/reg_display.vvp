@@ -1,0 +1,33 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffd060e490 .scope module, "reg_display" "reg_display" 2 1;
+ .timescale 0 0;
+v0x7fffd060e620_0 .var "data", 7 0;
+    .scope S_0x7fffd060e490;
+T_0 ;
+    %vpi_call 2 5 "$dumpfile", "reg_display.vcd" {0 0 0};
+    %vpi_call 2 6 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fffd060e490 {0 0 0};
+    %pushi/vec4 170, 0, 8;
+    %store/vec4 v0x7fffd060e620_0, 0, 8;
+    %vpi_call 2 9 "$display", "Time=%0t : data (binary)  = %b", $time, v0x7fffd060e620_0 {0 0 0};
+    %vpi_call 2 10 "$display", "Time=%0t : data (hex)     = %h", $time, v0x7fffd060e620_0 {0 0 0};
+    %vpi_call 2 11 "$display", "Time=%0t : data (decimal) = %0d", $time, v0x7fffd060e620_0 {0 0 0};
+    %delay 5, 0;
+    %pushi/vec4 204, 0, 8;
+    %store/vec4 v0x7fffd060e620_0, 0, 8;
+    %vpi_call 2 14 "$display", "Time=%0t : After change -> data (binary) = %b", $time, v0x7fffd060e620_0 {0 0 0};
+    %vpi_call 2 15 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "reg_display.v";
