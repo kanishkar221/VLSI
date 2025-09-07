@@ -1,0 +1,105 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffbfb12790 .scope module, "tb_full_adder" "tb_full_adder" 2 1;
+ .timescale 0 0;
+v0x7fffbfb296f0_0 .var "a", 0 0;
+v0x7fffbfb297b0_0 .var "b", 0 0;
+v0x7fffbfb29880_0 .var "cin", 0 0;
+v0x7fffbfb29980_0 .net "cout", 0 0, L_0x7fffbfb29ef0;  1 drivers
+v0x7fffbfb29a50_0 .net "sum", 0 0, L_0x7fffbfb29c80;  1 drivers
+S_0x7fffbfb12920 .scope module, "uut" "full_adder" 2 4, 3 1 0, S_0x7fffbfb12790;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "cout";
+L_0x7fffbfb29b40 .functor XOR 1, v0x7fffbfb296f0_0, v0x7fffbfb297b0_0, C4<0>, C4<0>;
+L_0x7fffbfb29c80 .functor XOR 1, L_0x7fffbfb29b40, v0x7fffbfb29880_0, C4<0>, C4<0>;
+L_0x7fffbfb29de0 .functor AND 1, v0x7fffbfb296f0_0, v0x7fffbfb297b0_0, C4<1>, C4<1>;
+L_0x7fffbfb29e50 .functor AND 1, L_0x7fffbfb29b40, v0x7fffbfb29880_0, C4<1>, C4<1>;
+L_0x7fffbfb29ef0 .functor OR 1, L_0x7fffbfb29de0, L_0x7fffbfb29e50, C4<0>, C4<0>;
+v0x7fffbfb12fa0_0 .net "a", 0 0, v0x7fffbfb296f0_0;  1 drivers
+v0x7fffbfb290b0_0 .net "b", 0 0, v0x7fffbfb297b0_0;  1 drivers
+v0x7fffbfb29170_0 .net "cin", 0 0, v0x7fffbfb29880_0;  1 drivers
+v0x7fffbfb29240_0 .net "cout", 0 0, L_0x7fffbfb29ef0;  alias, 1 drivers
+v0x7fffbfb29300_0 .net "sum", 0 0, L_0x7fffbfb29c80;  alias, 1 drivers
+v0x7fffbfb29410_0 .net "w1", 0 0, L_0x7fffbfb29b40;  1 drivers
+v0x7fffbfb294d0_0 .net "w2", 0 0, L_0x7fffbfb29de0;  1 drivers
+v0x7fffbfb29590_0 .net "w3", 0 0, L_0x7fffbfb29e50;  1 drivers
+    .scope S_0x7fffbfb12790;
+T_0 ;
+    %vpi_call 2 6 "$display", "A B Cin | Sum Cout" {0 0 0};
+    %vpi_call 2 7 "$display", "%4t | %b %b %b | %b %b ", $time, v0x7fffbfb296f0_0, v0x7fffbfb297b0_0, v0x7fffbfb29880_0, v0x7fffbfb29a50_0, v0x7fffbfb29980_0 {0 0 0};
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb296f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb297b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb29880_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb296f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb297b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb29880_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb296f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb297b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb29880_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb296f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb297b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb29880_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb296f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb297b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb29880_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb296f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb297b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb29880_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb296f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb297b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffbfb29880_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb296f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb297b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffbfb29880_0, 0, 1;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_full_adder.v";
+    "full_adder.v";
