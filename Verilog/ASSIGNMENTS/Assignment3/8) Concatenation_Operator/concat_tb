@@ -1,0 +1,73 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffd2a0f270 .scope module, "tb_concat_module" "tb_concat_module" 2 3;
+ .timescale -9 -12;
+v0x7fffd2a36ed0_0 .var "a", 0 0;
+v0x7fffd2a36f90_0 .var "b", 1 0;
+v0x7fffd2a37060_0 .var "c", 1 0;
+v0x7fffd2a37160_0 .net "y", 2 0, L_0x7fffd2a37440;  1 drivers
+S_0x7fffd2a21d40 .scope module, "uut" "concat_module" 2 10, 3 1 0, S_0x7fffd2a0f270;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 2 "b";
+    .port_info 2 /INPUT 2 "c";
+    .port_info 3 /OUTPUT 3 "y";
+v0x7fffd2a21f90_0 .net *"_ivl_1", 0 0, L_0x7fffd2a37230;  1 drivers
+v0x7fffd2a369b0_0 .net *"_ivl_3", 0 0, L_0x7fffd2a37350;  1 drivers
+v0x7fffd2a36a90_0 .net "a", 0 0, v0x7fffd2a36ed0_0;  1 drivers
+v0x7fffd2a36b60_0 .net "b", 1 0, v0x7fffd2a36f90_0;  1 drivers
+v0x7fffd2a36c40_0 .net "c", 1 0, v0x7fffd2a37060_0;  1 drivers
+v0x7fffd2a36d70_0 .net "y", 2 0, L_0x7fffd2a37440;  alias, 1 drivers
+L_0x7fffd2a37230 .part v0x7fffd2a36f90_0, 0, 1;
+L_0x7fffd2a37350 .part v0x7fffd2a37060_0, 1, 1;
+L_0x7fffd2a37440 .concat [ 1 1 1 0], L_0x7fffd2a37350, L_0x7fffd2a37230, v0x7fffd2a36ed0_0;
+    .scope S_0x7fffd2a0f270;
+T_0 ;
+    %vpi_call 2 18 "$dumpfile", "concat_module.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fffd2a0f270 {0 0 0};
+    %vpi_call 2 20 "$display", "Time\011a\011b\011c\011y" {0 0 0};
+    %vpi_call 2 21 "$monitor", "%0t\011%b\011%b\011%b\011%b", $time, v0x7fffd2a36ed0_0, v0x7fffd2a36f90_0, v0x7fffd2a37060_0, v0x7fffd2a37160_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffd2a36ed0_0, 0, 1;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x7fffd2a36f90_0, 0, 2;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x7fffd2a37060_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffd2a36ed0_0, 0, 1;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x7fffd2a36f90_0, 0, 2;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x7fffd2a37060_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffd2a36ed0_0, 0, 1;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x7fffd2a36f90_0, 0, 2;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x7fffd2a37060_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffd2a36ed0_0, 0, 1;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x7fffd2a36f90_0, 0, 2;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x7fffd2a37060_0, 0, 2;
+    %delay 10000, 0;
+    %vpi_call 2 28 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_concat_module.v";
+    "concat_module.v";

@@ -1,0 +1,59 @@
+$date
+	Mon Sep  8 19:26:24 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_concat_module $end
+$var wire 3 ! y [2:0] $end
+$var reg 1 " a $end
+$var reg 2 # b [1:0] $end
+$var reg 2 $ c [1:0] $end
+$scope module uut $end
+$var wire 1 " a $end
+$var wire 2 % b [1:0] $end
+$var wire 2 & c [1:0] $end
+$var wire 3 ' y [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b11 '
+b10 &
+b1 %
+b10 $
+b1 #
+0"
+b11 !
+$end
+#10000
+b1 $
+b1 &
+b11 #
+b11 %
+b110 !
+b110 '
+1"
+#20000
+b101 !
+b101 '
+b11 $
+b11 &
+b10 #
+b10 %
+#30000
+b0 $
+b0 &
+b0 #
+b0 %
+b0 !
+b0 '
+0"
+#40000
