@@ -1,0 +1,56 @@
+$date
+	Mon Sep  8 19:51:47 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_parity9 $end
+$var wire 1 ! op $end
+$var wire 1 " ep $end
+$var reg 9 # x [8:0] $end
+$scope module uut $end
+$var wire 1 ! op $end
+$var wire 9 $ x [8:0] $end
+$var wire 1 " ep $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 $
+b0 #
+0"
+1!
+$end
+#10
+0!
+1"
+b1 #
+b1 $
+#20
+1!
+0"
+b11 #
+b11 $
+#30
+0!
+1"
+b101010101 #
+b101010101 $
+#40
+1!
+0"
+b10011001 #
+b10011001 $
+#50
+0!
+1"
+b111111111 #
+b111111111 $
+#60

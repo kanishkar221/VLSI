@@ -1,0 +1,57 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffc95de650 .scope module, "tb_parity9" "tb_parity9" 2 1;
+ .timescale 0 0;
+v0x7fffc95f13e0_0 .net "ep", 0 0, L_0x7fffc95f1680;  1 drivers
+v0x7fffc95f14b0_0 .net "op", 0 0, L_0x7fffc95f17c0;  1 drivers
+v0x7fffc95f1580_0 .var "x", 8 0;
+S_0x7fffc95de7e0 .scope module, "uut" "parity9" 2 5, 3 1 0, S_0x7fffc95de650;
+ .timescale 0 0;
+    .port_info 0 /INPUT 9 "x";
+    .port_info 1 /OUTPUT 1 "ep";
+    .port_info 2 /OUTPUT 1 "op";
+L_0x7fffc95f17c0 .functor NOT 1, L_0x7fffc95f1680, C4<0>, C4<0>, C4<0>;
+v0x7fffc95dea10_0 .net "ep", 0 0, L_0x7fffc95f1680;  alias, 1 drivers
+v0x7fffc95f11e0_0 .net "op", 0 0, L_0x7fffc95f17c0;  alias, 1 drivers
+v0x7fffc95f12a0_0 .net "x", 8 0, v0x7fffc95f1580_0;  1 drivers
+L_0x7fffc95f1680 .reduce/xor v0x7fffc95f1580_0;
+    .scope S_0x7fffc95de650;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "parity.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fffc95de650 {0 0 0};
+    %vpi_call 2 14 "$display", "time\011\011x\011\011 ep op" {0 0 0};
+    %vpi_call 2 15 "$monitor", "%0t\011%b\011 %b  %b", $time, v0x7fffc95f1580_0, v0x7fffc95f13e0_0, v0x7fffc95f14b0_0 {0 0 0};
+    %pushi/vec4 0, 0, 9;
+    %store/vec4 v0x7fffc95f1580_0, 0, 9;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 9;
+    %store/vec4 v0x7fffc95f1580_0, 0, 9;
+    %delay 10, 0;
+    %pushi/vec4 3, 0, 9;
+    %store/vec4 v0x7fffc95f1580_0, 0, 9;
+    %delay 10, 0;
+    %pushi/vec4 341, 0, 9;
+    %store/vec4 v0x7fffc95f1580_0, 0, 9;
+    %delay 10, 0;
+    %pushi/vec4 153, 0, 9;
+    %store/vec4 v0x7fffc95f1580_0, 0, 9;
+    %delay 10, 0;
+    %pushi/vec4 511, 0, 9;
+    %store/vec4 v0x7fffc95f1580_0, 0, 9;
+    %delay 10, 0;
+    %vpi_call 2 23 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_parity9.v";
+    "parity9.v";
