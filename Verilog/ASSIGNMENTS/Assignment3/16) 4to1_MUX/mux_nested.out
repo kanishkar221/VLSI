@@ -1,0 +1,106 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7ffff22f0f20 .scope module, "mux_nested_tb" "mux_nested_tb" 2 1;
+ .timescale 0 0;
+v0x7ffff2309900_0 .var "i0", 0 0;
+v0x7ffff23099c0_0 .var "i1", 0 0;
+v0x7ffff2309a90_0 .var "i2", 0 0;
+v0x7ffff2309b90_0 .var "i3", 0 0;
+v0x7ffff2309c60_0 .var "s0", 0 0;
+v0x7ffff2309d00_0 .var "s1", 0 0;
+v0x7ffff2309dd0_0 .net "y", 0 0, L_0x7ffff230a1a0;  1 drivers
+S_0x7ffff22f10b0 .scope module, "uut" "mux_nested" 2 5, 3 1 0, S_0x7ffff22f0f20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "s0";
+    .port_info 1 /INPUT 1 "s1";
+    .port_info 2 /INPUT 1 "i0";
+    .port_info 3 /INPUT 1 "i1";
+    .port_info 4 /INPUT 1 "i2";
+    .port_info 5 /INPUT 1 "i3";
+    .port_info 6 /OUTPUT 1 "y";
+v0x7ffff22b7490_0 .net *"_ivl_0", 0 0, L_0x7ffff2309ea0;  1 drivers
+v0x7ffff23091d0_0 .net *"_ivl_2", 0 0, L_0x7ffff230a060;  1 drivers
+v0x7ffff23092b0_0 .net "i0", 0 0, v0x7ffff2309900_0;  1 drivers
+v0x7ffff2309350_0 .net "i1", 0 0, v0x7ffff23099c0_0;  1 drivers
+v0x7ffff2309410_0 .net "i2", 0 0, v0x7ffff2309a90_0;  1 drivers
+v0x7ffff2309520_0 .net "i3", 0 0, v0x7ffff2309b90_0;  1 drivers
+v0x7ffff23095e0_0 .net "s0", 0 0, v0x7ffff2309c60_0;  1 drivers
+v0x7ffff23096a0_0 .net "s1", 0 0, v0x7ffff2309d00_0;  1 drivers
+v0x7ffff2309760_0 .net "y", 0 0, L_0x7ffff230a1a0;  alias, 1 drivers
+L_0x7ffff2309ea0 .functor MUXZ 1, v0x7ffff2309a90_0, v0x7ffff2309b90_0, v0x7ffff2309c60_0, C4<>;
+L_0x7ffff230a060 .functor MUXZ 1, v0x7ffff2309900_0, v0x7ffff23099c0_0, v0x7ffff2309c60_0, C4<>;
+L_0x7ffff230a1a0 .functor MUXZ 1, L_0x7ffff230a060, L_0x7ffff2309ea0, v0x7ffff2309d00_0, C4<>;
+    .scope S_0x7ffff22f0f20;
+T_0 ;
+    %vpi_call 2 16 "$dumpfile", "Mux_nested.vcd" {0 0 0};
+    %vpi_call 2 17 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7ffff22f0f20 {0 0 0};
+    %vpi_call 2 18 "$display", "TIME | i0 i1 i2 i3 s1 s0 | y" {0 0 0};
+    %vpi_call 2 19 "$monitor", "%4t |  %b  %b  %b  %b  %b  %b | %b", $time, v0x7ffff2309900_0, v0x7ffff23099c0_0, v0x7ffff2309a90_0, v0x7ffff2309b90_0, v0x7ffff2309d00_0, v0x7ffff2309c60_0, v0x7ffff2309dd0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7ffff2309900_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff23099c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309a90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309b90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309d00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309c60_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309900_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7ffff23099c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309a90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309b90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309d00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7ffff2309c60_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309900_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff23099c0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7ffff2309a90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309b90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7ffff2309d00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309c60_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309900_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff23099c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2309a90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7ffff2309b90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7ffff2309d00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7ffff2309c60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 26 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "mux_nested_tb.v";
+    "mux_nested.v";
