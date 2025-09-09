@@ -1,0 +1,62 @@
+$date
+	Mon Sep  8 23:38:05 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module parametricmux_tb $end
+$var wire 4 ! y [3:0] $end
+$var reg 4 " d0 [3:0] $end
+$var reg 4 # d1 [3:0] $end
+$var reg 4 $ d2 [3:0] $end
+$var reg 4 % d3 [3:0] $end
+$var reg 1 & s0 $end
+$var reg 1 ' s1 $end
+$scope module uut $end
+$var wire 4 ( d0 [3:0] $end
+$var wire 4 ) d1 [3:0] $end
+$var wire 4 * d2 [3:0] $end
+$var wire 4 + d3 [3:0] $end
+$var wire 1 & s0 $end
+$var wire 1 ' s1 $end
+$var wire 4 , y [3:0] $end
+$var parameter 32 - N $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 -
+$end
+#0
+$dumpvars
+b1 ,
+b1000 +
+b100 *
+b10 )
+b1 (
+0'
+0&
+b1000 %
+b100 $
+b10 #
+b1 "
+b1 !
+$end
+#10
+b10 !
+b10 ,
+1&
+#20
+b100 !
+b100 ,
+0&
+1'
+#30
+b1000 !
+b1000 ,
+1&
+#40
