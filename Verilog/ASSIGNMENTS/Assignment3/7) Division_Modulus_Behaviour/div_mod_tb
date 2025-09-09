@@ -1,0 +1,95 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffef269860 .scope module, "tb_div_mod" "tb_div_mod" 2 3;
+ .timescale -9 -12;
+v0x7fffef2846e0_0 .var "a", 0 0;
+v0x7fffef2847a0_0 .var "b", 0 0;
+v0x7fffef284840_0 .net "div_out", 0 0, L_0x7fffef284cc0;  1 drivers
+v0x7fffef2848e0_0 .net "mod_out", 0 0, L_0x7fffef284e50;  1 drivers
+v0x7fffef2849b0_0 .var/s "sa", 0 0;
+v0x7fffef284a50_0 .var/s "sb", 0 0;
+v0x7fffef284b20_0 .net/s "sdiv_out", 0 0, L_0x7fffef284f40;  1 drivers
+v0x7fffef284bf0_0 .net/s "smod_out", 0 0, L_0x7fffef2850d0;  1 drivers
+S_0x7fffef2699f0 .scope module, "uut" "div_mod" 2 9, 3 1 0, S_0x7fffef269860;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "sa";
+    .port_info 3 /INPUT 1 "sb";
+    .port_info 4 /OUTPUT 1 "div_out";
+    .port_info 5 /OUTPUT 1 "mod_out";
+    .port_info 6 /OUTPUT 1 "sdiv_out";
+    .port_info 7 /OUTPUT 1 "smod_out";
+v0x7fffef26aa80_0 .net "a", 0 0, v0x7fffef2846e0_0;  1 drivers
+v0x7fffef284020_0 .net "b", 0 0, v0x7fffef2847a0_0;  1 drivers
+v0x7fffef2840e0_0 .net "div_out", 0 0, L_0x7fffef284cc0;  alias, 1 drivers
+v0x7fffef284180_0 .net "mod_out", 0 0, L_0x7fffef284e50;  alias, 1 drivers
+v0x7fffef284240_0 .net/s "sa", 0 0, v0x7fffef2849b0_0;  1 drivers
+v0x7fffef284350_0 .net/s "sb", 0 0, v0x7fffef284a50_0;  1 drivers
+v0x7fffef284410_0 .net/s "sdiv_out", 0 0, L_0x7fffef284f40;  alias, 1 drivers
+v0x7fffef2844d0_0 .net/s "smod_out", 0 0, L_0x7fffef2850d0;  alias, 1 drivers
+L_0x7fffef284cc0 .arith/div 1, v0x7fffef2846e0_0, v0x7fffef2847a0_0;
+L_0x7fffef284e50 .arith/mod 1, v0x7fffef2846e0_0, v0x7fffef2847a0_0;
+L_0x7fffef284f40 .arith/div.s 1, v0x7fffef2849b0_0, v0x7fffef284a50_0;
+L_0x7fffef2850d0 .arith/mod.s 1, v0x7fffef2849b0_0, v0x7fffef284a50_0;
+    .scope S_0x7fffef269860;
+T_0 ;
+    %vpi_call 2 22 "$dumpfile", "div_mod_wave.vcd" {0 0 0};
+    %vpi_call 2 23 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fffef269860 {0 0 0};
+    %vpi_call 2 24 "$display", "Time\011 a b | div mod | sa sb | sdiv smod" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffef2846e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffef2847a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffef2849b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffef284a50_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 26 "$display", "%0dns\011 %0d %0d | %0d %0d | %0d %0d | %0d %0d", $time, v0x7fffef2846e0_0, v0x7fffef2847a0_0, v0x7fffef284840_0, v0x7fffef2848e0_0, v0x7fffef2849b0_0, v0x7fffef284a50_0, v0x7fffef284b20_0, v0x7fffef284bf0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffef2846e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffef2847a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffef2849b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffef284a50_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 29 "$display", "%0dns\011 %0d %0d | %0d %0d | %0d %0d | %0d %0d", $time, v0x7fffef2846e0_0, v0x7fffef2847a0_0, v0x7fffef284840_0, v0x7fffef2848e0_0, v0x7fffef2849b0_0, v0x7fffef284a50_0, v0x7fffef284b20_0, v0x7fffef284bf0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffef2846e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffef2847a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffef2849b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffef284a50_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 32 "$display", "%0dns\011 %0d %0d | %0d %0d | %0d %0d | %0d %0d", $time, v0x7fffef2846e0_0, v0x7fffef2847a0_0, v0x7fffef284840_0, v0x7fffef2848e0_0, v0x7fffef2849b0_0, v0x7fffef284a50_0, v0x7fffef284b20_0, v0x7fffef284bf0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffef2846e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffef2847a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffef2849b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffef284a50_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 35 "$display", "%0dns\011 %0d %0d | %0d %0d | %0d %0d | %0d %0d", $time, v0x7fffef2846e0_0, v0x7fffef2847a0_0, v0x7fffef284840_0, v0x7fffef2848e0_0, v0x7fffef2849b0_0, v0x7fffef284a50_0, v0x7fffef284b20_0, v0x7fffef284bf0_0 {0 0 0};
+    %vpi_call 2 37 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_div_mod.v";
+    "div_mod.v";
