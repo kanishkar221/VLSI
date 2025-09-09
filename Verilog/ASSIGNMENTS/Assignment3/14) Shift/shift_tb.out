@@ -1,0 +1,59 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffdb319970 .scope module, "shift_tb" "shift_tb" 2 2;
+ .timescale -9 -12;
+v0x7fffdb32cda0_0 .var "in", 3 0;
+v0x7fffdb32ce60_0 .net "out1", 3 0, L_0x7fffdb32d150;  1 drivers
+v0x7fffdb32cf30_0 .net "out2", 3 0, L_0x7fffdb32d380;  1 drivers
+S_0x7fffdb319b00 .scope module, "uut" "shift" 2 6, 3 1 0, S_0x7fffdb319970;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "in";
+    .port_info 1 /OUTPUT 4 "out1";
+    .port_info 2 /OUTPUT 4 "out2";
+L_0x7f7847350060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7fffdb319d30_0 .net *"_ivl_10", 0 0, L_0x7f7847350060;  1 drivers
+v0x7fffdb32c7b0_0 .net *"_ivl_2", 2 0, L_0x7fffdb32d030;  1 drivers
+L_0x7f7847350018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7fffdb32c890_0 .net *"_ivl_4", 0 0, L_0x7f7847350018;  1 drivers
+v0x7fffdb32c950_0 .net *"_ivl_8", 2 0, L_0x7fffdb32d2e0;  1 drivers
+v0x7fffdb32ca30_0 .net "in", 3 0, v0x7fffdb32cda0_0;  1 drivers
+v0x7fffdb32cb60_0 .net "out1", 3 0, L_0x7fffdb32d150;  alias, 1 drivers
+v0x7fffdb32cc40_0 .net "out2", 3 0, L_0x7fffdb32d380;  alias, 1 drivers
+L_0x7fffdb32d030 .part v0x7fffdb32cda0_0, 0, 3;
+L_0x7fffdb32d150 .concat [ 1 3 0 0], L_0x7f7847350018, L_0x7fffdb32d030;
+L_0x7fffdb32d2e0 .part v0x7fffdb32cda0_0, 1, 3;
+L_0x7fffdb32d380 .concat [ 3 1 0 0], L_0x7fffdb32d2e0, L_0x7f7847350060;
+    .scope S_0x7fffdb319970;
+T_0 ;
+    %vpi_call 2 9 "$monitor", "Time=%0t | IN=%b OUT1(Left)=%b OUT2(Right)=%b", $time, v0x7fffdb32cda0_0, v0x7fffdb32ce60_0, v0x7fffdb32cf30_0 {0 0 0};
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v0x7fffdb32cda0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x7fffdb32cda0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v0x7fffdb32cda0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 14, 0, 4;
+    %store/vec4 v0x7fffdb32cda0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x7fffdb32cda0_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "shift_tb.v";
+    "shift.v";
