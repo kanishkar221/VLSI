@@ -1,0 +1,61 @@
+$date
+	Mon Sep  8 23:51:20 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module parametric_comparator_tb $end
+$var wire 1 ! lt $end
+$var wire 1 " gt $end
+$var wire 1 # eq $end
+$var reg 4 $ a [3:0] $end
+$var reg 4 % b [3:0] $end
+$scope module uut $end
+$var wire 4 & a [3:0] $end
+$var wire 4 ' b [3:0] $end
+$var wire 1 ! lt $end
+$var wire 1 " gt $end
+$var wire 1 # eq $end
+$var parameter 32 ( N $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 (
+$end
+#0
+$dumpvars
+b101 '
+b101 &
+b101 %
+b101 $
+1#
+0"
+0!
+$end
+#10
+b111 %
+b111 '
+0#
+1"
+b1010 $
+b1010 &
+#20
+b1000 %
+b1000 '
+1!
+0"
+b11 $
+b11 &
+#30
+b0 %
+b0 '
+0!
+1"
+b1111 $
+b1111 &
+#40
