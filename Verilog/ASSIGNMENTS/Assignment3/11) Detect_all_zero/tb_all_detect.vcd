@@ -1,0 +1,53 @@
+$date
+	Mon Sep  8 20:12:55 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_all_detect $end
+$var wire 1 ! zero $end
+$var wire 1 " one $end
+$var parameter 32 # N $end
+$var reg 9 $ x [8:0] $end
+$scope module uut $end
+$var wire 9 % x [8:0] $end
+$var wire 1 ! zero $end
+$var wire 1 " one $end
+$var parameter 32 & N $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1001 &
+b1001 #
+$end
+#0
+$dumpvars
+b0 %
+b0 $
+0"
+1!
+$end
+#10000
+0!
+b1 $
+b1 %
+#20000
+b11 $
+b11 %
+#30000
+b101010101 $
+b101010101 %
+#40000
+1"
+b111111111 $
+b111111111 %
+#50000
+0"
+b111111110 $
+b111111110 %
+#60000
