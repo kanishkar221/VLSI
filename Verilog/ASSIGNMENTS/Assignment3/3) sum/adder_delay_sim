@@ -1,0 +1,72 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffe6868630 .scope module, "tb_adder_delay" "tb_adder_delay" 2 1;
+ .timescale 0 0;
+v0x7fffe687d030_0 .var "a", 3 0;
+v0x7fffe687d0f0_0 .var "b", 3 0;
+v0x7fffe687d1c0_0 .net "sum", 4 0, L_0x7fffe687d570;  1 drivers
+S_0x7fffe68687c0 .scope module, "dut" "adder_delay" 2 5, 3 1 0, S_0x7fffe6868630;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 5 "sum";
+v0x7fffe682f490_0 .net *"_ivl_0", 4 0, L_0x7fffe687d2c0;  1 drivers
+L_0x7f90ecee0018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7fffe687ca40_0 .net *"_ivl_3", 0 0, L_0x7f90ecee0018;  1 drivers
+v0x7fffe687cb20_0 .net *"_ivl_4", 4 0, L_0x7fffe687d430;  1 drivers
+L_0x7f90ecee0060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7fffe687cbe0_0 .net *"_ivl_7", 0 0, L_0x7f90ecee0060;  1 drivers
+v0x7fffe687ccc0_0 .net "a", 3 0, v0x7fffe687d030_0;  1 drivers
+v0x7fffe687cdf0_0 .net "b", 3 0, v0x7fffe687d0f0_0;  1 drivers
+v0x7fffe687ced0_0 .net "sum", 4 0, L_0x7fffe687d570;  alias, 1 drivers
+L_0x7fffe687d2c0 .concat [ 4 1 0 0], v0x7fffe687d030_0, L_0x7f90ecee0018;
+L_0x7fffe687d430 .concat [ 4 1 0 0], v0x7fffe687d0f0_0, L_0x7f90ecee0060;
+L_0x7fffe687d570 .delay 5 (5,5,5) L_0x7fffe687d570/d;
+L_0x7fffe687d570/d .arith/sum 5, L_0x7fffe687d2c0, L_0x7fffe687d430;
+    .scope S_0x7fffe6868630;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "adder_delay.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fffe6868630 {0 0 0};
+    %vpi_call 2 10 "$display", "time)\011 a b | sum" {0 0 0};
+    %vpi_call 2 11 "$monitor", "%0t\011 %b %b | %b", $time, v0x7fffe687d030_0, v0x7fffe687d0f0_0, v0x7fffe687d1c0_0 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x7fffe687d030_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x7fffe687d0f0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x7fffe687d030_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x7fffe687d0f0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x7fffe687d030_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x7fffe687d0f0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x7fffe687d030_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x7fffe687d0f0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x7fffe687d030_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x7fffe687d0f0_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_adder_delay.v";
+    "adder_delay.v";

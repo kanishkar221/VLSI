@@ -1,0 +1,61 @@
+$date
+	Mon Sep  8 16:37:49 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_adder_delay $end
+$var wire 5 ! sum [4:0] $end
+$var reg 4 " a [3:0] $end
+$var reg 4 # b [3:0] $end
+$scope module dut $end
+$var wire 4 $ a [3:0] $end
+$var wire 4 % b [3:0] $end
+$var wire 5 & sum [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx &
+b0 %
+b0 $
+b0 #
+b0 "
+bx !
+$end
+#5
+b0 !
+b0 &
+#10
+b1 #
+b1 %
+#15
+b1 !
+b1 &
+#20
+b0 #
+b0 %
+b1 "
+b1 $
+#30
+b1 #
+b1 %
+#35
+b10 !
+b10 &
+#40
+b0 #
+b0 %
+b0 "
+b0 $
+#45
+b0 !
+b0 &
+#50
