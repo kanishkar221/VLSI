@@ -1,0 +1,66 @@
+$date
+	Tue Sep  9 12:32:32 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_comparator_signed $end
+$var wire 1 ! lt $end
+$var wire 1 " gt $end
+$var wire 1 # eq $end
+$var reg 4 $ a [3:0] $end
+$var reg 4 % b [3:0] $end
+$scope module uut $end
+$var wire 4 & a [3:0] $end
+$var wire 4 ' b [3:0] $end
+$var parameter 32 ( WIDTH $end
+$var reg 1 # eq $end
+$var reg 1 " gt $end
+$var reg 1 ! lt $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 (
+$end
+#0
+$dumpvars
+b1000 '
+b111 &
+b1000 %
+b111 $
+0#
+1"
+0!
+$end
+#5
+0"
+1!
+b111 %
+b111 '
+b1000 $
+b1000 &
+#10
+0!
+1#
+b1010 %
+b1010 '
+b1010 $
+b1010 &
+#15
+1"
+0#
+b11 %
+b11 '
+b101 $
+b101 &
+#20
+b1110 %
+b1110 '
+b1111 $
+b1111 &
+#30
