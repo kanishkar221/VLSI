@@ -1,0 +1,54 @@
+$date
+	Fri Sep 12 00:18:56 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_mux4to1_casex $end
+$var wire 1 ! y $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$var reg 1 $ c $end
+$var reg 1 % d $end
+$var reg 2 & sel [1:0] $end
+$scope module uut $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 $ c $end
+$var wire 1 % d $end
+$var wire 2 ' sel [1:0] $end
+$var reg 1 ! y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 '
+b0 &
+0%
+1$
+0#
+1"
+1!
+$end
+#10
+b1 &
+b1 '
+#20
+b10 &
+b10 '
+#30
+0!
+b11 &
+b11 '
+#40
+1!
+b0x &
+b0x '
+#50
