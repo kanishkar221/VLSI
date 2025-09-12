@@ -1,0 +1,44 @@
+$date
+	Thu Sep 11 11:18:36 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_flag_logic $end
+$var wire 1 ! out $end
+$var reg 1 " f1 $end
+$var reg 1 # f2 $end
+$var reg 1 $ f3 $end
+$scope module uut $end
+$var wire 1 " f1 $end
+$var wire 1 # f2 $end
+$var wire 1 $ f3 $end
+$var reg 1 ! out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1$
+0#
+0"
+1!
+$end
+#10
+0!
+0$
+1#
+#20
+1!
+0#
+1"
+#30
+z!
+0"
+#40
