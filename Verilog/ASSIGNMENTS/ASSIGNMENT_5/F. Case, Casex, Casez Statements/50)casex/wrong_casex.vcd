@@ -1,0 +1,49 @@
+$date
+	Fri Sep 12 01:35:57 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_wrong_casex $end
+$var wire 1 ! y $end
+$var reg 4 " in [3:0] $end
+$scope module uut $end
+$var wire 4 # in [3:0] $end
+$var reg 1 ! y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1000 #
+b1000 "
+1!
+$end
+#10
+b1100 "
+b1100 #
+#20
+0!
+b0 "
+b0 #
+#30
+b100 "
+b100 #
+#40
+b1111 "
+b1111 #
+#50
+1!
+b1x00 "
+b1x00 #
+#60
+0!
+b0x00 "
+b0x00 #
+#120
