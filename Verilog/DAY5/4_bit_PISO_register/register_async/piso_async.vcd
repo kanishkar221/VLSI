@@ -1,0 +1,112 @@
+$date
+	Tue Sep 16 07:39:08 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_piso_async $end
+$var wire 1 ! serial_out $end
+$var reg 1 " clk $end
+$var reg 1 # load $end
+$var reg 4 $ parallel_in [3:0] $end
+$var reg 1 % reset $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 1 # load $end
+$var wire 4 & parallel_in [3:0] $end
+$var wire 1 % reset $end
+$var wire 1 ! serial_out $end
+$var reg 4 ' shift_reg [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 '
+b0 &
+1%
+b0 $
+0#
+0"
+0!
+$end
+#5
+1"
+#7
+0%
+#10
+b1010 $
+b1010 &
+1#
+0"
+#15
+1!
+b1010 '
+1"
+#20
+0"
+0#
+#25
+0!
+b100 '
+1"
+#30
+0"
+#35
+1!
+b1000 '
+1"
+#40
+0"
+#45
+0!
+b0 '
+1"
+#50
+0"
+1%
+#54
+0%
+#55
+1"
+#60
+0"
+b1101 $
+b1101 &
+1#
+#65
+1!
+b1101 '
+1"
+#70
+0"
+0#
+#75
+b1010 '
+1"
+#80
+0"
+#85
+0!
+b100 '
+1"
+#90
+0"
+#95
+1!
+b1000 '
+1"
+#100
+0"
+#105
+0!
+b0 '
+1"
+#110
+0"
