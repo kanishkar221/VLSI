@@ -1,0 +1,57 @@
+$date
+	Fri Sep 12 04:56:27 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module reg_array_generate_tb $end
+$var wire 8 ! a [7:0] $end
+$scope module uut $end
+$var reg 8 " a [7:0] $end
+$scope begin genblk1[0] $end
+$var parameter 2 # i $end
+$upscope $end
+$scope begin genblk1[1] $end
+$var parameter 2 $ i $end
+$upscope $end
+$scope begin genblk1[2] $end
+$var parameter 3 % i $end
+$upscope $end
+$scope begin genblk1[3] $end
+$var parameter 3 & i $end
+$upscope $end
+$scope begin genblk1[4] $end
+$var parameter 4 ' i $end
+$upscope $end
+$scope begin genblk1[5] $end
+$var parameter 4 ( i $end
+$upscope $end
+$scope begin genblk1[6] $end
+$var parameter 4 ) i $end
+$upscope $end
+$scope begin genblk1[7] $end
+$var parameter 4 * i $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b111 *
+b110 )
+b101 (
+b100 '
+b11 &
+b10 %
+b1 $
+b0 #
+$end
+#0
+$dumpvars
+b0 "
+b0 !
+$end
+#15
