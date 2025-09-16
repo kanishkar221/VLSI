@@ -1,0 +1,21 @@
+$date
+	Tue Sep  9 12:53:07 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module y_test $end
+$var reg 6 ! y [5:0] $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10 !
+$end
+#1
