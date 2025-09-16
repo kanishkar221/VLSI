@@ -1,0 +1,88 @@
+$date
+	Tue Sep 16 07:05:37 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_sipo_sync $end
+$var wire 4 ! parallel_out [3:0] $end
+$var reg 1 " clk $end
+$var reg 1 # reset $end
+$var reg 1 $ serial_in $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 4 % parallel_out [3:0] $end
+$var wire 1 # reset $end
+$var wire 1 $ serial_in $end
+$var reg 4 & shift_reg [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx &
+bx %
+0$
+1#
+0"
+bx !
+$end
+#5
+b0 !
+b0 %
+b0 &
+1"
+#10
+0"
+1$
+0#
+#15
+b1 !
+b1 %
+b1 &
+1"
+#20
+0"
+0$
+#25
+b10 !
+b10 %
+b10 &
+1"
+#30
+0"
+1$
+#35
+b101 !
+b101 %
+b101 &
+1"
+#40
+0"
+#45
+b1011 !
+b1011 %
+b1011 &
+1"
+#50
+0"
+#55
+b111 !
+b111 %
+b111 &
+1"
+#60
+0"
+#65
+b1111 !
+b1111 %
+b1111 &
+1"
+#70
+0"
