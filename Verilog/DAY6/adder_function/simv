@@ -1,0 +1,51 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7fffef5cb490 .scope module, "adder_function" "adder_function" 2 1;
+ .timescale 0 0;
+v0x7fffef615e10_0 .var "a", 3 0;
+v0x7fffef615f10_0 .var "b", 3 0;
+v0x7fffef615ff0_0 .var "cin", 0 0;
+v0x7fffef6160c0_0 .net "sum", 4 0, L_0x7fffef6161a0;  1 drivers
+L_0x7fffef6161a0 .ufunc/vec4 TD_adder_function.add_with_carry, 5, v0x7fffef615e10_0, v0x7fffef615f10_0, v0x7fffef615ff0_0 (v0x7fffef615c70_0, v0x7fffef615d30_0, v0x7fffef615bb0_0) S_0x7fffef5cb620;
+S_0x7fffef5cb620 .scope function.vec4.s5, "add_with_carry" "add_with_carry" 2 18, 2 18 0, S_0x7fffef5cb490;
+ .timescale 0 0;
+; Variable add_with_carry is vec4 return value of scope S_0x7fffef5cb620
+v0x7fffef615bb0_0 .var "carry_in", 0 0;
+v0x7fffef615c70_0 .var "x", 3 0;
+v0x7fffef615d30_0 .var "y", 3 0;
+TD_adder_function.add_with_carry ;
+    %load/vec4 v0x7fffef615c70_0;
+    %pad/u 5;
+    %load/vec4 v0x7fffef615d30_0;
+    %pad/u 5;
+    %add;
+    %load/vec4 v0x7fffef615bb0_0;
+    %pad/u 5;
+    %add;
+    %ret/vec4 0, 0, 5;  Assign to add_with_carry (store_vec4_to_lval)
+    %end;
+    .scope S_0x7fffef5cb490;
+T_1 ;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x7fffef615e10_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0x7fffef615f10_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffef615ff0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 14 "$display", "a = %b, b = %b, cin = %b ---> sum = %b", v0x7fffef615e10_0, v0x7fffef615f10_0, v0x7fffef615ff0_0, v0x7fffef6160c0_0 {0 0 0};
+    %vpi_call 2 15 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "adder_function.v";
