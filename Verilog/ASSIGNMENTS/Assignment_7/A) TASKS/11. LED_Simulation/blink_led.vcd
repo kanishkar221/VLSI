@@ -1,0 +1,58 @@
+$date
+	Wed Sep 17 11:07:23 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module blink_led $end
+$var reg 1 ! led $end
+$scope task blink_task $end
+$var integer 32 " delay [31:0] $end
+$var integer 32 # i [31:0] $end
+$var integer 32 $ times [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx $
+bx #
+bx "
+0!
+$end
+#5
+1!
+b0 #
+b1010 "
+b101 $
+#15
+0!
+#25
+1!
+b1 #
+#35
+0!
+#45
+1!
+b10 #
+#55
+0!
+#65
+1!
+b11 #
+#75
+0!
+#85
+1!
+b100 #
+#95
+0!
+#105
+b101 #
+#205
