@@ -1,0 +1,68 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x7ffff2c17600 .scope module, "mux_tb" "mux_tb" 2 6;
+ .timescale 0 0;
+v0x7ffff2c2a470_0 .var "in", 3 0;
+v0x7ffff2c2a560_0 .var "s0", 0 0;
+v0x7ffff2c2a600_0 .var "s1", 0 0;
+v0x7ffff2c2a6d0_0 .net "sel", 1 0, L_0x7ffff2c2a8b0;  1 drivers
+v0x7ffff2c2a7c0_0 .net "y", 0 0, L_0x7ffff2c2a9d0;  1 drivers
+L_0x7ffff2c2a8b0 .concat [ 1 1 0 0], v0x7ffff2c2a560_0, v0x7ffff2c2a600_0;
+S_0x7ffff2c17790 .scope module, "uut" "mux4x1" 2 12, 2 1 0, S_0x7ffff2c17600;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "in";
+    .port_info 1 /INPUT 2 "sel";
+    .port_info 2 /OUTPUT 1 "y";
+v0x7ffff2c179c0_0 .net "in", 3 0, v0x7ffff2c2a470_0;  1 drivers
+v0x7ffff2c2a270_0 .net "sel", 1 0, L_0x7ffff2c2a8b0;  alias, 1 drivers
+v0x7ffff2c2a350_0 .net "y", 0 0, L_0x7ffff2c2a9d0;  alias, 1 drivers
+L_0x7ffff2c2a9d0 .part/v v0x7ffff2c2a470_0, L_0x7ffff2c2a8b0, 1;
+    .scope S_0x7ffff2c17600;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2c2a560_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x7ffff2c17600;
+T_1 ;
+    %delay 5, 0;
+    %load/vec4 v0x7ffff2c2a560_0;
+    %inv;
+    %store/vec4 v0x7ffff2c2a560_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x7ffff2c17600;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ffff2c2a600_0, 0, 1;
+    %end;
+    .thread T_2;
+    .scope S_0x7ffff2c17600;
+T_3 ;
+    %delay 10, 0;
+    %load/vec4 v0x7ffff2c2a600_0;
+    %inv;
+    %store/vec4 v0x7ffff2c2a600_0, 0, 1;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0x7ffff2c17600;
+T_4 ;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x7ffff2c2a470_0, 0, 4;
+    %vpi_call 2 22 "$monitor", "t=%0t sel=%b in=%b y=%b", $time, v0x7ffff2c2a6d0_0, v0x7ffff2c2a470_0, v0x7ffff2c2a7c0_0 {0 0 0};
+    %delay 50, 0;
+    %vpi_call 2 23 "$finish" {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Mux4to1.v";
