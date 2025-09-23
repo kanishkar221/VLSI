@@ -1,15 +1,13 @@
-module DLatch_sync (
-    input wire clk, d, en, reset,
+module DLatch (
+    input wire d, en, reset,
     output reg q
 );
 
-always @(posedge clk) begin
+always @(*) begin
     if (reset)
-        q <= 1'b0;      
+        q = 1'b0;
     else if (en)
-        q <= d;         
-    else
-        q <= q;         
+        q = d;
 end
 
 endmodule
