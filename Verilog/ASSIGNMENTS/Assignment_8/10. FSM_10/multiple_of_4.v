@@ -1,0 +1,51 @@
+module multiple_of_4(
+	input clk,
+	input reset,
+	input in,                 
+	output reg multiple_of_4  
+);
+
+	parameter S0 = 2'b00; 
+	parameter S1 = 2'b01; 
+	parameter S2 = 2'b10; 
+	parameter S3 = 2'b11; 
+
+	reg [1:0] state, next_state;
+
+	always @(posedge clk or posedge reset) begin
+		if (reset)
+			state <= S0;  
+		else
+			state <= next_state;
+	end
+
+	always @(state or in) begin
+		case (state)
+			S0: begin
+      				if (in == 1) next_state = S1;
+        			else next_state = S0;
+       			end
+        		S1: begin
+         			if (in == 1) next_state = S2;
+         			else next_state = S1;
+       			end
+        		S2: begin
+         			if (in == 1) next_state = S3;
+            			else next_state = S2;
+      			end
+			S3: begin
+				if (in == 1) next_state = S0;
+            			else next_state = S3;
+			end
+			default: next_state = S0;
+		endcase
+	end
+
+	always @(*) begin
+		if (state == S0)
+			multiple_of_4 = 1'b1;
+		else
+ 			multiple_of_4 = 1'b0;
+	end
+endmodule
+
