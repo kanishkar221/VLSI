@@ -1,1 +1,31 @@
-
+// Model - 1
+Time=206: Comparison Passed: wr_data=e4 and rd_data=e4
+Time=226: Comparison Passed: wr_data=68 and rd_data=68
+Time=246: Comparison Passed: wr_data=08 and rd_data=08
+Time=266: Comparison Passed: wr_data=da and rd_data=da
+Time=286: Comparison Passed: wr_data=d5 and rd_data=d5
+Time=306: Comparison Passed: wr_data=c8 and rd_data=c8
+Time=326: Comparison Passed: wr_data=ea and rd_data=ea
+Time=346: Comparison Passed: wr_data=34 and rd_data=34
+Time=366: Comparison Passed: wr_data=4a and rd_data=4a
+Time=386: Comparison Passed: wr_data=9a and rd_data=9a
+Time=406: Comparison Passed: wr_data=f9 and rd_data=f9
+Time=426: Comparison Passed: wr_data=eb and rd_data=eb
+Time=446: Comparison Passed: wr_data=56 and rd_data=56
+Time=466: Comparison Passed: wr_data=4c and rd_data=4c
+Time=486: Comparison Passed: wr_data=38 and rd_data=38
+Time=546: Comparison Passed: wr_data=8d and rd_data=8d
+Time=566: Comparison Passed: wr_data=ca and rd_data=ca
+Time=586: Comparison Passed: wr_data=6a and rd_data=6a
+Time=606: Comparison Passed: wr_data=25 and rd_data=25
+Time=626: Comparison Passed: wr_data=83 and rd_data=83
+Time=646: Comparison Passed: wr_data=b0 and rd_data=b0
+Time=666: Comparison Passed: wr_data=1a and rd_data=1a
+Time=686: Comparison Passed: wr_data=39 and rd_data=39
+Time=706: Comparison Passed: wr_data=90 and rd_data=90
+Time=726: Comparison Passed: wr_data=d1 and rd_data=d1
+Time=746: Comparison Passed: wr_data=9f and rd_data=9f
+Time=766: Comparison Passed: wr_data=6a and rd_data=6a
+Time=786: Comparison Passed: wr_data=57 and rd_data=57
+Time=806: Comparison Passed: wr_data=30 and rd_data=30
+Time=826: Comparison Passed: wr_data=d9 and rd_data=d9
